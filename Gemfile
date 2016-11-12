@@ -20,6 +20,9 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'figaro'
 gem 'pry'
+gem 'devise'
+gem 'redcarpet'
+gem "pundit"
 
 group :development, :test do
   gem 'byebug'
