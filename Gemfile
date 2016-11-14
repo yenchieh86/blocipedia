@@ -16,13 +16,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'figaro'
 gem 'pry'
 gem 'devise'
 gem 'redcarpet'
 gem "pundit"
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug'

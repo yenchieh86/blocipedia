@@ -1,0 +1,22 @@
+<%= form_for [wiki] do |w| %>
+    <div class="container"  style="margin-left:-460px">
+        <p class="text-center">Wiki Information</p>
+        <div style=" margin-left:50px;margin-right:50px;">
+            <%= w.label :title %>
+            <%= w.text_field :title, class: 'form-control', placeholder: "Enter wiki name" %><br>
+            <%= w.label :body %>
+            <%= w.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki description" %>
+            <% if current_user.admin? || current_user.premium? %>
+                <div class="form-group" style="margin-left:20px;">
+                    <%= w.label :private, class: 'checkbox' do %>
+                        <%= w.check_box :private %> Private Wiki
+                    <% end %>
+                </div>
+            <% end %>
+        <br>
+            <%= w.submit "Save", class: 'btn btn-success' %>
+        </div>
+    </div>
+<% end %>
+
+
