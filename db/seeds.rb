@@ -40,14 +40,15 @@ user = User.last
        ) 
 end
 
-u = User.all
-user = u[1]
-
-Wiki.create!(
+2.times do
+   Wiki.create!(
         title: RandomData.random_sentence,
         body: RandomData.random_sentence,
-        user: user
-) 
+        user: user,
+        private: true
+       ) 
+end
+
     
 puts "#{Wiki.count} wikis had been created"
 puts "#{User.count} users had been created"
