@@ -1,0 +1,20 @@
+.row
+  .col-md-6.col-md-offset-5
+    %h3 My Wikis
+  .col-md-7.col-md-offset-2
+    %table.table.table-bordered
+      %tr
+        %th Program
+        %th Edit
+        %th Delete
+      - @wikis.each do |wiki|
+        %tr
+          %th
+            = link_to wiki.title, wiki_path(wiki)
+            = wiki.private
+            = wiki.user_id
+          %th= link_to "Edit", edit_wiki_path(wiki)
+          %th= link_to "Delete", wiki, method: :delete,data: { confirm: "Are you sure you want to delete it?" }
+    .col-md-1.col-md-offset-5
+      %button.btn.btn-default{:type => "button"}
+        = link_to "Create New Wiki", new_wiki_path

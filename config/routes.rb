@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'collaborators/index'
 
-  get 'collaborators/new'
 
   devise_for :users
   

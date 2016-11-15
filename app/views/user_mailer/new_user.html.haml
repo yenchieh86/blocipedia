@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1 Hi, Welcome
+    %small
+      By: Admin
+    %p
+      Hi, #{@user.email}
+    %p Welcome to Blocipedia
+    %p
+      = link_to "View the website", root_url

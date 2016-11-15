@@ -1,0 +1,25 @@
+.row
+  .col-md-6.col-md-offset-3
+    %h2
+      Blocipedia: Social, Markdown Wikis
+%table.table.table-bordered
+  .col-md-6.col-md-offset-4
+    %h4 Create and share Markdown Wikis
+  .col-md-6.col-md-offset-5
+    %button.btn.btn-default{:type => "button"}
+      = link_to "Sing In", new_user_session_path
+.row
+  .col-md-2.col-md-offset-3
+    %p Create as many public wikis as you want!
+  .col-md-2.col-md-offset-1
+    %p Create private wikis!
+.row
+  %div{:style => "margin-left:10px"}
+    .col-md-3.col-md-offset-3
+      .btn-group
+        %button.btn.btn-default{:type => "button"}
+          = link_to "Free Account", new_user_registration_path
+    .col-md-3
+      .btn-group
+        %button.btn.btn-default{:type => "button"}
+          = link_to "Premium Account", new_user_registration_path

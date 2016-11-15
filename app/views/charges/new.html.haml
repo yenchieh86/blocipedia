@@ -1,0 +1,6 @@
+= form_tag charges_path do
+  .col-md-offset-5
+    %h4 Click the button!
+    %script.stripe-button{"data-amount" => "<haml_loud", "data-key" => "#{@stripe_btn_data[:key]}", :src => "https://checkout.stripe.com/checkout.js"}
+      :cdata
+        @stripe_btn_data[:amount]

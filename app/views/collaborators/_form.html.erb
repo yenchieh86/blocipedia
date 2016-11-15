@@ -1,8 +1,0 @@
-<%= form_for [wiki, collaborator] do |c| %>
-    <p>please enter the collaborator's email</p>
-    <%= c.label :user_id %>
-    <br>
-    <%= c.text_field :user_id, class: 'form-control', placeholder: "Enter collaborator's email: " %>
-    <br>
-    <%= c.submit "Save", class: 'btn btn-success' %>
-<% end %>
