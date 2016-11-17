@@ -4,8 +4,8 @@
     <%= w.label :title %>
     <%= w.text_field :title, class: 'form-control', placeholder: "Enter wiki name" %>
     <br/>
-    <%= w.label :body %>
-    <%= w.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki description" %>
+      <%= w.label :body %>
+      <%= w.text_area :body, rows: 8, class: 'form-control markdown', placeholder: "Enter wiki description" %>
     <% if current_user.admin? || current_user.premium? %>
       <div class="row">
         <div class="col-md-3 text-center">
@@ -22,7 +22,10 @@
   <div class="col-md-6">
     <div class="text-center">
       <h4>Preview Area</h4>
-        <div id="wiki-preview">      </div>
+      <br>
+      <br>
+        <div id="wiki-preview">      
+        </div>
     </div>
   </div>
 <% end %>
