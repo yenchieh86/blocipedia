@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+function convertHtml (source, replace) {
+    var converter = new showdown.Converter();
+    text = $(source).val()
+    var html      = converter.makeHtml(text);
+    $(replace).html(html)
+}
+
+$(document).ready(function(){
+    convertHtml('#wiki_body','#wiki-preview');
+    
+    $('#wiki_body').keyup(function(event){
+        convertHtml(this, '#wiki-preview');
+    })
+})

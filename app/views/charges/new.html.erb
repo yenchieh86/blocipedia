@@ -1,0 +1,14 @@
+<%= form_tag charges_path do %>
+  <div class="col-md-offset-5">
+    <h4>Click the button!</h4>
+    <script class="stripe-button" data-amount="<haml_loud" data-key="<%= @stripe_btn_data[:key] %>" src="https://checkout.stripe.com/checkout.js">
+      <cdata>
+        
+        @stripe_btn_data[:amount]
+
+
+      </cdata>
+    </script>
+  </div>
+<% end %>
+

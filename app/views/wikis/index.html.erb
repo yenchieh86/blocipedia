@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <h3>My Wikis</h3>
+  </div>
+  <div class="col-md-7 col-md-offset-2">
+    <table class="table table-bordered">
+      <tr>
+        <th>Program</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <% @wikis.each do |wiki| %>
+        <tr>
+          <th>
+            <%= link_to wiki.title, wiki_path(wiki) %>
+            <%= wiki.private %>
+            <%= wiki.user_id %>
+          </th>
+          <th>
+            <%= link_to "Edit", edit_wiki_path(wiki) %>
+          </th>
+          <th>
+            <%= link_to "Delete", wiki, method: :delete,data: { confirm: "Are you sure you want to delete it?" } %>
+          </th>
+        </tr>
+      <% end %>
+    </table>
+    <div class="col-md-1 col-md-offset-5">
+        <%= link_to "Create New Wiki", new_wiki_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>
+
