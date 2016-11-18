@@ -3,14 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         
+
   has_many :wikis
   has_many :collaborators
   has_many :wiki_collaborators, through: :collaborators, source: :wiki
-  
-  
-  after_initialize { self.role ||= :standard }
-  
   enum role: [:standard, :premium, :admin]
- 
 end
