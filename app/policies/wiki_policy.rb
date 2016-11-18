@@ -1,5 +1,35 @@
 class WikiPolicy < ApplicationPolicy
-  class Scope < Scope
+
+
+  def new?
+    true
+  end
+
+  def create?
+    new?
+  end
+
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    edit?
+  end
+
+  def destroy?
+    record.user == user
+  end
+
+  class Scope
+
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
     def resolve
       if user.admin?
         scope.all
