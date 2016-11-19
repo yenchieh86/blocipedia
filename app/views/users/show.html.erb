@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="user-profile">
+      <div class="media">
+        <div class="media-left">
+         <%= user_robotar(@user.email) %>
+       </div>
+       <div class="media-body">
+        <h3 class='media-heading'>User profile for <%= @user.email %></h3>
+        <p>Member since: <%= @user.created_at.to_s(:short) %></p>
+        <p>Membership: <%= @user.role %></p>
+        <% if @user.premium? %>
+        <%= link_to 'Downgrade account', '' %>
+        <% else %>
+        <%= link_to 'Upgrade to premium', '' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
