@@ -13,10 +13,20 @@
             <%= w.check_box :private %>
             Private Wiki
           <% end %>
-        </div>  
+        </div>
       </div>
     <% end %>
     <br/>
+    <% if wiki.user == current_user %>
+      <%= hidden_field_tag 'wiki[user_ids][]', [] %>
+      <h4>Add collaborators</h4>
+      <% @users.each do |user| %>
+        <%= div_for(user) do %>
+          <%= check_box_tag :user_ids, user.id, wiki.users.include?(user), name: 'wiki[user_ids][]' %>
+          <%= label_tag :user_ids, user.email %>
+        <% end %>
+      <% end %>
+    <% end %>
     <%= w.submit "Save", class: 'btn btn-success' %>
   </div>
   <div class="col-md-6">
@@ -24,7 +34,7 @@
       <h4>Preview Area</h4>
       <br>
       <br>
-        <div id="wiki-preview">      
+        <div id="wiki-preview">
         </div>
     </div>
   </div>
