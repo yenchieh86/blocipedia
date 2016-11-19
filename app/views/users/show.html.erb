@@ -10,9 +10,9 @@
         <p>Member since: <%= @user.created_at.to_s(:short) %></p>
         <p>Membership: <%= @user.role %></p>
         <% if @user.premium? %>
-        <%= link_to 'Downgrade account', '' %>
+          <%= link_to 'Downgrade account', '' %>
         <% else %>
-        <%= link_to 'Upgrade to premium', '' %>
+          <%= link_to 'Upgrade to premium', '' %>
         <% end %>
       </div>
     </div>
