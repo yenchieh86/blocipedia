@@ -34,7 +34,7 @@
         <% if user_signed_in? %>
           <div style="margin-right:-70px">
             <div class="col-md-5 col-md-offset-4">
-              Signed in as: <strong><%= current_user.email, current_user %></strong> 		
+              Signed in as: <strong><%= link_to current_user.email, user_path(current_user.id) %></strong>
               <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>		
             </div>
           </div>

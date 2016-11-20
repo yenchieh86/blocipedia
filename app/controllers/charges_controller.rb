@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
             redirect_to user_root_path
         else
             flash[:alert] = 'Charge failed to process, please try again'
-            redirect_to user_path(current_user)
+            redirect_to user_path(current_user.id)
         end
         
         rescue Stripe::CardError => e

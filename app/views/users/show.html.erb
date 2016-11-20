@@ -10,7 +10,7 @@
                     <p>Member since <%= @user.created_at.to_s(:short) %></p>
                     <p>Membership: <%= @user.role %></p>
                     <% if @user.premium? %>
-                        <%= link_to 'Downgrade account', down_grade(current_user) %>
+                        <%= link_to 'Downgrade account', users_downgrade_path, method: :post %>
                     <% else %>
                         <%= link_to 'Upgrade to premium', new_charge_path %>
                     <% end %>

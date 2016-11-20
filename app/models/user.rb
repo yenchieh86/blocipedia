@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :wikis
   has_many :collaborators
-  has_many :wiki_collaborators, through: :collaborators, source: :wiki
+  has_many :wiki_collaborations, through: :collaborators, source: :wiki
   
   enum role: [:standard, :premium, :admin]
 end
