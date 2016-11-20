@@ -1,5 +1,17 @@
 class WikiPolicy < ApplicationPolicy
     
+    def edit?
+        record.user == user
+    end
+    
+    def update?
+        edit?
+    end
+    
+    def destroy?
+        record.user == user
+    end
+    
     class Scope
         attr_reader :user, :scope
         
@@ -9,26 +21,13 @@ class WikiPolicy < ApplicationPolicy
         end
         
         def resolve
-            wikis =[]
-            
-            if user.role == "admin"
-                wikis = scope.all
-            elsif user.role == 'premium'
-                all_wikis = scope.all
-                all_wikis.each do |wiki|
-                    if wiki.private? == false || wiki.user == user || wiki.collaborators.include?(user)
-                        wikis << wiki
-                    end
-                end
+            if user.admin?
+                scope.all
+            elsif user.premium?
+                scope.where(private: true, user_id: user.id) | scope.where(private: false) | user.wiki_collaborations
             else
-                all_wikis = scope.all
-                all_wikis.each do |wiki|
-                    if wiki.private? == false || wiki.collaborators.include?(user)
-                        wikis << wiki
-                    end
-                end
+                scope.where(private: false) | user.wiki_collaborations
             end
-            wikis
         end
     end
 end
