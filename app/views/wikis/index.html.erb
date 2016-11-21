@@ -13,8 +13,15 @@
         <tr>
           <th>
             <%= link_to wiki.title, wiki_path(wiki) %>
-            <%= wiki.private %>
-            <%= wiki.user_id %>
+              - 
+            <% if wiki.private? %>
+              < private >
+            <% else %>
+              < public >
+            <% end %>
+            <p>created by: 
+              <%= wiki.user.email %>
+            </p>
           </th>
           <th>
             <%= link_to "Edit", edit_wiki_path(wiki) %>

@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     end
     
     def downgrade
-        if current_user.premium!
+        if current_user.premium?
+            current_user.standard!
             flash[:notice] = "Your account has become a standard account."
             redirect_to user_path(current_user.id)
         else
