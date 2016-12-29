@@ -16,6 +16,7 @@
 //= require_tree .
 
 
+
 function highlight(code){
     $(code).each(function(i, block) {
     hljs.highlightBlock(block);
@@ -39,8 +40,6 @@ $(document).ready(function(){
     $('#wiki_body').keyup(function(event){
         convertHtml(this, '#wiki-preview');
     });
-    
-   
     
 });
 
