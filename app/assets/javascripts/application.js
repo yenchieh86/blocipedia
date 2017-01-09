@@ -51,7 +51,7 @@ $(document).ready(function(){
         request.send(JSON.stringify(event));
     };
     
-    blocmetrics.report();
+    blocmetrics.report('test');
     
 });
 
