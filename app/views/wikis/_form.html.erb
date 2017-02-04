@@ -1,4 +1,4 @@
-<%= form_for [wiki] do |w| %>
+<%= form_for [@wiki] do |w| %>
   <div class="col-md-6">
     <h4 class="text-center">Wiki Information</h4>
     <%= w.label :title %>
@@ -17,7 +17,7 @@
       </div>
     <% end %>
     <br/>
-    <% if wiki.user == current_user %>
+    <% if @wiki.user == current_user %>
       <%= hidden_field_tag 'wiki[user_ids][]',[] %>
       <h4>Add collaborators</h4>
       <% @users.each do |user| %>

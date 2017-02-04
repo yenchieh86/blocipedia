@@ -1,5 +1,3 @@
 class UserMailer < ApplicationMailer
-    default from:"cj4930@hotmail.com"
- 
-    
+  default from:"cj4930@hotmail.com"
 end

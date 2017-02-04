@@ -12,6 +12,7 @@ gem 'redcarpet'
 gem "pundit"
 gem 'stripe'
 gem 'friendly_id'
+gem 'gravtastic'
 
 group :production do
   gem 'pg'
@@ -31,4 +32,3 @@ group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails'
 end
-
