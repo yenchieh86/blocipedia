@@ -3,7 +3,7 @@
 <p>Blocipedia is using Ruby on Rails and jQuery. </p>
 <p>It allows users to create wikis and collaborate on other wikis.</p>
 [Heroku](https://yen-blocipedia.herokuapp.com/)
-
+[My Heroku Application Link](https://yen-sample-app.herokuapp.com/)
 
 Screenshots
 -----------
